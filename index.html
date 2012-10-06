@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Analogizing jQuery and Dojo</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                          <li class="active"><a href="#start">Getting Started</a></li>
+                          <li><a href="#common">Common Idioms</a></li>
+                          <li><a href="#selectors">Selectors</a></li>
+                          <li><a href="#effects">Animations &amp; Effects</a></li>
+                          <li>
+                            <a href="#nodelist">Array vs. NodeList</a>
+                            <!--
+                            TODO: Figure out a better place for summaries like this. And make them visible.
+                            <p class="gloss">The fundamental unit of jQuery is a JavaScript Array containing 0 or more DOM elements. These Array objects have extra <code>.on()</code>, <code>.click()</code>, <code>.map()</code>, etc methods attached to them in addition to the built-in list operations like <code>.slice()</code> and <code>.concat()</code>. </p>
+                            <p class="gloss">The fundamental units in YUI are <a href="http://developer.yahoo.com/yui/3/api/Node.html">Node</a> objects, which wrap DOM elements, and <a href="http://developer.yahoo.com/yui/3/api/NodeList.html">NodeList</a>s which are collections of Nodes. NodeLists are not Arrays and are not natively iterable.</p>
+                            -->
+                          </li>
+                          <li><a href="#ajax">Ajax</a></li>
+                          <li><a href="#css">CSS</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>Getting Started</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-info">jQuery 1.8.2</th>
+                  <th class="text-success">Dojo 1.7</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <footer>
+                <p>&copy; Company 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
