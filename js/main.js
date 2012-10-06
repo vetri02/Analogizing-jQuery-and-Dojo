@@ -1,1 +1,3 @@
-
+$(function(){
+	console.log("asfa");
+});

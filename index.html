@@ -30,7 +30,7 @@
                     </a>
                     <a class="brand" href="#">Analogizing jQuery and Dojo</a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav">
+                        <ul class="nav" id="nav">
                           <li class="active"><a href="#start">Getting Started</a></li>
                           <li><a href="#common">Common Idioms</a></li>
                           <li><a href="#selectors">Selectors</a></li>
@@ -52,36 +52,105 @@
         </div>
 
         <div class="container">
-            <h3>Getting Started</h3>
-            <table class="table">
+            <h3 id="start">Getting Started</h3>
+            <table class="table table-hover">
               <thead>
                 <tr>
-                  <th class="text-info">jQuery 1.8.2</th>
-                  <th class="text-success">Dojo 1.7</th>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo 1.7</th>
+                  <th class="notes">Notes</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>Global Objects and functions</td>
+                  <td>
+                      <code>jQuery</code> 
+                      <em class="muted">or</em> 
+                      <code>$</code>
+                  </td>
+                  <td><code>dojo</code></td>
+                  <td class="notes">
+                      <p>jQuery provides a function which can be accessed by <code>jQuery</code> or <code>$</code> which can be used to access all the jQuery methods. Ideally it accepts CSS selectors, searches through the DOM for any elements that match the provided selector and creates a new jQuery object that references these elements.</p>
+                      <p>Similarly <code>dojo</code> has a object which has all the methods.</p>
+                  </td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
+                  <td>DOM Ready</td>
+                  <td><pre>$(document).ready(
+function(){
+// Your code here
+});</pre></td>
+                  <td><pre>dojo.ready(
+function () {
+// Your code here
+});</pre></td>
+                  <td class="notes">Fires when DOM is ready
+                    <p><strong>jQuery Alternative Usage:</strong></p>
+                    <pre>$(function(){
+// Your code here
+});</pre>
+                  </td>
                 </tr>
               </tbody>
             </table>
 
+            <h3 id="common">Common Idioms</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo 1.7</th>
+                  <th class="notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Id Selector</td>
+                  <td><code>$("#bar")</code></td>
+                  <td><code>dojo.byId("bar")</code></td>
+                  <td class="notes">returns the element with id <em>bar</em>.</td>
+                </tr>
+                <tr>
+                  <td>Class Selector</td>
+                  <td><code>$(".foo")</code></td>
+                  <td><code>dojo.query(".foo")</code></td>
+                  <td class="notes">
+                      <p>Selects all the elements with class <em>foo</em>.</p>
+                      <p><code>$(".foo").length</code> &amp; <code>dojo.query(".foo").length</code> gives the length of the elements present for the given condition.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Element Selector</td>
+                  <td><code>$("td").find(".notes")</code></td>
+                  <td><code>dojo.query("td.notes")</code></td>
+                  <td class="notes">
+                    Gets all the <em>td</em> elements with class <em>notes</em>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pseudo class selectors</td>
+                  <td><code>$(".container:first-child")</code></td>
+                  <td><code>dojo.query(".container:first-child")</code></td>
+                  <td class="notes">Get the elements filtered through pseudo classes.</td>
+                </tr>
+                <tr>
+                  <td>Creates a new DOM element</td>
+                  <td><code>$("<<span class="hidden">\</span>div/>")</code></td>
+                  <td><code>dojo.create("div")</code></td>
+                  <td class="notes">Usage:
+                    <p><strong>jQuery</strong></p>
+                    <pre>var e = $("&lt;div/&gt;").attr("id","last");
+$("body").append(e);</pre>
+                    <p><strong>Dojo</strong></p>
+                    <pre>dojo.create("div",{"id":"last"},dojo.body());
+                    </pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <hr>
 
             <footer>
@@ -92,7 +161,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojo/dojo.xd.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>

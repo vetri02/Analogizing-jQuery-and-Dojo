@@ -9,7 +9,20 @@ body {
                 padding-bottom: 40px;
      }
 
+.jquery {
+  color: #3a87ad;
+  width:20%
+}
 
+.dojo {
+  color: #468847;
+  width:20%
+}
+
+.notes {
+  color: #333;
+  width:40%
+}
 
 
 
