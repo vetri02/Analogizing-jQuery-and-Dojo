@@ -149,6 +149,28 @@ $("body").append(e);</pre>
                     </pre>
                   </td>
                 </tr>
+                <tr>
+                  <td>Get inner HTML of the element</td>
+                  <td><code>$("#bar").html()</code></td>
+                  <td><code>dojo.byId("bar").innerHTML</code></td>
+                  <td class="notes">Even setting the innerHTML is pretty much same
+                    <p><strong>jQuery</strong></p>
+                    <code>$("#bar").html("Hola")</code>
+                    <p><strong>Dojo</strong></p>
+                    <code>dojo.byId("bar").innerHTML = "Hola"</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Value of an element</td>
+                  <td><code>$("select:first").val()</code></td>
+                  <td><code>dojo.query("select")[0].value</code></td>
+                  <td class="notes">Set the value the same way
+                    <p><strong>jQuery</strong></p>
+                    <code>$("select:first").val("Here is the first option")</code>
+                    <p><strong>Dojo</strong></p>
+                    <code>dojo.query("select")[0].value = "Here is the first option"</code>
+                  </td>
+                </tr>
               </tbody>
             </table>
             <hr>
