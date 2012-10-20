@@ -58,7 +58,7 @@
                 <tr>
                   <th></th>
                   <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo 1.7</th>
+                  <th class="dojo">Dojo < 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -102,7 +102,7 @@ function () {
                 <tr>
                   <th></th>
                   <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo 1.7</th>
+                  <th class="dojo">Dojo < 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -171,6 +171,53 @@ $("body").append(e);</pre>
                     <code>dojo.query("select")[0].value = "Here is the first option"</code>
                   </td>
                 </tr>
+                <tr>
+                  <td>Attribute Values </td>
+                  <td>
+                    <code>$(".active a").attr("href") <em>//get</em></code>
+                    <br/>
+                    <br/>
+                    <code>$(".active a").attr("href", "javascript:void(0);") <em>//set</em></code>
+                  </td>
+                  <td>
+                    <code>dojo.query(".active a").attr("href") <em>//get</em></code>
+                    <br/>
+                    <br/>
+                    <code>dojo.query(".active a").attr("href", "javascript:void(0);") <em>//set</em></code>
+                  </td>
+                  <td class="notes">Get and set attribute values</td>
+                </tr>
+                <tr>
+                  <td>Trim</td>
+                  <td><code>$.trim(" foo ") <em>//foo</em></code></td>
+                  <td><code>dojo.trim(" foo ") <em>//foo</em></code></td>
+                  <td class="notes">Trim strings</td>
+                </tr>
+                <tr>
+                  <td>Event Binding</td>
+                  <td><code>$("#foo").
+                    bind("click", function(){
+                    <em>// do something</em>
+                  })</code></td>
+                  <td><code>dojo.connect(dojo.byId("foo"),"onclick",this,function(){
+                    <em>// do something</em>
+                  }))</code></td>
+                  <td class="notes"> <p>The third parameter in <code>dojo.connect</code> is the scope in which the following method should be executed.</p>
+                  <p>Most of all the events can be bound this way.</p>
+                  </td>
+                </tr>
+                <tr>
+                   <td>Unbind Events</td>
+                   <td><code>$("#foo").unbind()</code></td>
+                   <td><code>var con = dojo.connect(
+                    dojo.byId("foo"),"onclick",this,
+                    function(){
+                    <em>// do something</em>
+                    }));</code><br/><br/>
+                    <code>dojo.disconnect(con);</code>
+                   </td>
+                   <td class="notes">In dojo you have to assign the <code>dojo.connect</code> to a variable and pass to <code>dojo.disconnect</code> to unbind the event.</td>
+                 </tr> 
               </tbody>
             </table>
             <hr>
