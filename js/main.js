@@ -1,3 +1,8 @@
 $(function(){
-	$("table").find("td:first-child").hide().end().find("th:first-child").hide();
+	//$("table").find("td:first-child").hide().end().find("th:first-child").hide();
+	//$(".location table tbody tr td:nth-child(2)").addClass("black");
+	$("table").find("td:nth-child(2)").find("code, pre").addClass("text-info");
+	$("table").find("td:nth-child(3)").find("code, pre").addClass("text-success");
+	$("table").find("td:nth-child(4)").find("code, pre").addClass("text-error");
+	//$("table").find("td:nth-child(2)").find("pre").addClass("text-info");
 });
