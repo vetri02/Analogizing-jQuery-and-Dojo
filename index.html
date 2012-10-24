@@ -33,6 +33,7 @@
                         <ul class="nav" id="nav">
                           <li class="active"><a href="#start">Getting Started</a></li>
                           <li><a href="#common">Common Idioms</a></li>
+                          <li><a href="#events">Events</a></li>
                           <li><a href="#selectors">Selectors</a></li>
                           <li><a href="#effects">Animations &amp; Effects</a></li>
                           <li>
@@ -193,8 +194,43 @@ $("body").append(e);</pre>
                   <td><code>dojo.trim(" foo ")</code></td>
                   <td class="notes">Trim strings. Examples will return <em>foo</em></td>
                 </tr>
+                
+                 <tr>
+                    <td>Create and append elements</td>
+                    <td><code>$("body").append('<<span class="hide">\</span>a href="/foo">Foo<<span class="hide">\</span>/a>')</code></td>
+                    <td><code>dojo.create("a", { href: "/foo", innerHTML: "Foo" }, dojo.body());</code></td>
+                    <td class="notes">Creates an HTML element and appends to the given node</td>
+                  </tr> 
+                  <tr>
+                    <td>Remove an element</td>
+                    <td><code>$("#foo").remove()</code></td>
+                    <td><code>dojo.destroy("foo");</code></td>
+                    <td class="notes">Remove the element as per the selector</td>
+                  </tr>
+                  <tr>
+                    <td>Find all the child elements</td>
+                    <td><code>$(body).children();</code></td>
+                    <td><code>dojo.query("body > *")</code></td>
+                    <td class="notes">
+                        Can use selectors to filter results eg.: <p><strong>jQuery</strong></p> <code>$("body").children("div")</code>
+                        <p><strong>Dojo</strong></p> <code>dojo.query("body > div")</code>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+            <h3 id="events">Events</h3>
+            <table class="table table-hover">
+              <thead>
                 <tr>
-                  <td>Event Binding</td>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <td>Event Binding</td>
                   <td><code>$("#foo").
                     bind("click", function(){
                     <em>// do something</em>
@@ -218,27 +254,6 @@ $("body").append(e);</pre>
                    </td>
                    <td class="notes">In dojo you have to assign the <code>dojo.connect</code> to a variable and pass to <code>dojo.disconnect</code> to unbind the event.</td>
                  </tr>
-                 <tr>
-                    <td>Create and append elements</td>
-                    <td><code>$("body").append('<<span class="hide">\</span>a href="/foo">Foo<<span class="hide">\</span>/a>')</code></td>
-                    <td><code>dojo.create("a", { href: "/foo", innerHTML: "Foo" }, dojo.body());</code></td>
-                    <td class="notes">Creates an HTML element and appends to the given node</td>
-                  </tr> 
-                  <tr>
-                    <td>Remove an element</td>
-                    <td><code>$("#foo").remove()</code></td>
-                    <td><code>dojo.destroy("foo");</code></td>
-                    <td class="notes">Remove the element as per the selector</td>
-                  </tr>
-                  <tr>
-                    <td>Find all the child elements</td>
-                    <td><code>$(body).children();</code></td>
-                    <td><code>dojo.query("body > *")</code></td>
-                    <td class="notes">
-                        Can use selectors to filter results eg.: <p><strong>jQuery</strong></p> <code>$("body").children("div")</code>
-                        <p><strong>Dojo</strong></p> <code>dojo.query("body > div")</code>
-                    </td>
-                  </tr>
               </tbody>
             </table>
             <hr>
