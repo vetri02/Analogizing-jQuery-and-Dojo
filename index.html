@@ -256,6 +256,37 @@ $("body").append(e);</pre>
                  </tr>
               </tbody>
             </table>
+            <h3 id="effects">Effects</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Animate</td>
+                  <td><pre>$("#block").animate({
+    width:   100,
+    height:  100,
+    opacity: 0.5
+  }, 1500 );
+  <em>//$(domNode).animate({properties}, duration)</em></pre></td>
+                  <td><pre>dojo.animateProperty({
+  node:dojo.byId('block'),
+  properties: {
+    width:   100,
+    height:  100,
+    opacity: 0.5
+  },duration : 1500
+}).play();</pre></td>
+                  <td class="notes"><em>Pretty much self explanatory</em></td>
+                </tr>
+              </tbody>
+            </table>  
             <hr>
 
             <footer>
