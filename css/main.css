@@ -11,12 +11,12 @@ body {
 
 .jquery {
   color: #3a87ad;
-  width:25%
+  width:23%
 }
 
 .dojo {
   color: #468847;
-  width:25%
+  width:23%
 }
 
 .notes {
@@ -43,6 +43,14 @@ pre em, code em {
   font-weight: bold;
 }
 
+.left{
+  text-align: left;
+}
+
+.right{
+  float: right;
+  clear: right;
+}
 
 
 

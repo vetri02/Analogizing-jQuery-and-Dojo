@@ -34,8 +34,9 @@
                           <li class="active"><a href="#start">Getting Started</a></li>
                           <li><a href="#common">Common Idioms</a></li>
                           <li><a href="#events">Events</a></li>
+                           <li><a href="#effects">Animations &amp; Effects</a></li>
                           <li><a href="#selectors">Selectors</a></li>
-                          <li><a href="#effects">Animations &amp; Effects</a></li>
+                         
                           <li>
                             <a href="#nodelist">Array vs. NodeList</a>
                             <!--
@@ -256,7 +257,7 @@ $("body").append(e);</pre>
                  </tr>
               </tbody>
             </table>
-            <h3 id="effects">Effects</h3>
+            <h3 id="effects">Animations &amp; Effects</h3>
             <table class="table table-hover">
               <thead>
                 <tr>
@@ -285,12 +286,79 @@ $("body").append(e);</pre>
 }).play();</pre></td>
                   <td class="notes"><em>Pretty much self explanatory</em></td>
                 </tr>
+                <tr>
+                  <td>FadeIn</td>
+                  <td><code>$("#effects").fadeIn()</code></td>
+                  <td><code>dojo.fadeIn({ node:dojo.byId('effects') }).play();</code></td>
+                  <td class="notes"></td>
+                </tr>
+                <tr>
+                  <td>FadeOut</td>
+                  <td><code>$("#effects").fadeOut()</code></td>
+                  <td><code>dojo.fadeOut({ node:dojo.byId('effects') }).play();</code></td>
+                  <td class="notes"></td>
+                </tr>
+              </tbody>
+            </table>
+            <h3 id="selectors">Selectors</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Select All Nodes</td>
+                  <td><code>$("*")</code></td>
+                  <td><code>dojo.query("*")</code></td>
+                  <td class="notes"></td>
+                </tr>
+                <tr>
+                  <td><em class="right">CSS3</em></td>
+                  <td><code>$(":button")</code></td>
+                  <td><code>dojo.query("input[type=button]")</code></td>
+                  <td class="notes"></td>
+                </tr>
+                <tr>
+                  <td><em class="right">CSS3</em></td>
+                  <td><code>$(":checkbox")</code></td>
+                  <td><code>dojo.query("input[type=checkbox]")</code></td>
+                  <td class="notes"></td>
+                </tr>
+                <tr>
+                  <td><em class="right">CSS3</em></td>
+                  <td><code>$(':checked')</code></td>
+                  <td><code>dojo.query("input:checked")</code></td>
+                  <td class="notes"></td>
+                </tr>
+                <tr>
+                  <td><em class="right">Descendent selector</em></td>
+                  <td><code>$('parent child')</code></td>
+                  <td><code>dojo.query(child, parent)</code></td>
+                  <td class="notes">Finds all the child of the parent element</td>
+                </tr>
+                 <tr>
+                  <td><em class="right">Descendent selector</em></td>
+                  <td><code>$('parent > child')</code></td>
+                  <td><code>dojo.query(parent > child)</code></td>
+                  <td class="notes">Finds all the immediate children of the parent element</td>
+                </tr>
+                <tr>
+                  <td><em class="right">CSS3</em></td>
+                  <td><code>$('input:disabled')</code><br/><code>$('input:enabled')</code></td>
+                  <td><code>dojo.query('input:disabled')</code><br/><code>dojo.query('input:enabled')</code></td>
+                  <td class="notes"></td>
+                </tr>
               </tbody>
             </table>  
             <hr>
 
             <footer>
-                <p>&copy; Company 2012</p>
+                <p><em>by ThetaScript</em></p>
             </footer>
 
         </div> <!-- /container -->
@@ -298,7 +366,8 @@ $("body").append(e);</pre>
         <script src="js/vendor/jquery-1.8.2.min.js"></script>
         <script src="js/vendor/dojo.1.6.1.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
-
+        <script src="js/vendor/jquery.smoothScroll.min.js"></script>
+        
         <script src="js/main.js"></script>
     </body>
 </html>

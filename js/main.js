@@ -5,4 +5,16 @@ $(function(){
 	$("table").find("td:nth-child(3)").find("code, pre").addClass("text-success");
 	$("table").find("td:nth-child(4)").find("code, pre").addClass("text-error");
 	//$("table").find("td:nth-child(2)").find("pre").addClass("text-info");
+
+
+	$nav = $("#nav").find("li");
+
+	$(nav).find("a").smoothScroll({offset:-40});
+
+	$nav.click(function(){
+		$nav.each(function(){
+			$(this).removeClass("active");
+		});
+		$(this).addClass("active");
+	});
 });
