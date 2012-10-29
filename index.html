@@ -353,6 +353,32 @@ $("body").append(e);</pre>
                   <td><code>dojo.query('input:disabled')</code><br/><code>dojo.query('input:enabled')</code></td>
                   <td class="notes"></td>
                 </tr>
+                <tr>
+                  <td>Odd and Even</td>
+                  <td>
+                    <code>$("body").find("div:nth-child(odd)");</code>
+                    <br/>
+                    <code>$("body").find("div:nth-child(even)");</code>
+                  </td>
+                  <td>
+                    <code>dojo.query("body  div:nth-child(odd)");</code>
+                    <br/>
+                    <code>dojo.query("body  div:nth-child(even)");</code>
+                  </td>
+                  <td class="notes">Find all the odd and even divs</td>
+                </tr>
+                <tr>
+                  <td>Negation selector</td>
+                  <td><code>$('.container:not(div)')</code></td>
+                  <td><code>dojo.query('.container:not(div)')</code></td>
+                  <td class="notes">Containing class <em>container</em> but not a div</td>
+                </tr>
+                <tr>
+                  <td>Last Child</td>
+                  <td><code>$(".container:last-child")</code></td>
+                  <td><code>dojo.query(".container:last-child")</code></td>
+                  <td class="notes"></td>
+                </tr>
               </tbody>
             </table>  
             <hr>
