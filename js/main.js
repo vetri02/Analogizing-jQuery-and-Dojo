@@ -6,6 +6,7 @@ $(function(){
 	$("table").find("td:nth-child(4)").find("code, pre").addClass("text-error");
 	//$("table").find("td:nth-child(2)").find("pre").addClass("text-info");
 
+	//$('#navbar').scrollspy();
 
 	$nav = $("#nav").find("li");
 
