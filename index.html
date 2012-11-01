@@ -398,7 +398,32 @@ $("body").append(e);</pre>
                   <td class="notes"></td>
                 </tr>
               </tbody>
-            </table>  
+            </table>
+            <h3 id="nodelist">Array vs. NodeList</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Looping through the jQuery or dojo nodelists</td>
+                  <td><pre>$("p").each(
+function(){
+$(this).addClass("foo");
+});</pre></td>
+                  <td><pre>dojo.query("p").forEach(
+function(pa){
+dojo.addClass(pa,'foo');
+});</pre></td>
+                  <td class="notes">The nodelist thats being sent can be considered as an array, so you can perform operatiosn on it as you need.</td>
+                </tr>
+              </tbody>
+            </table>    
             <hr>
 
             <footer>
