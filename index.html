@@ -422,6 +422,47 @@ dojo.addClass(pa,'foo');
 });</pre></td>
                   <td class="notes">The nodelist thats being sent can be considered as an array, so you can perform operatiosn on it as you need.</td>
                 </tr>
+                <tr>
+                  <td><em class="right">IndexOf</em></td>
+                  <td><code>$.inArray("foo", arr)</code></td>
+                  <td><code>dojo.indexOf(arr, "foo");</code></td>
+                  <td class="notes">
+                   <p>Eg. Array <code>var arr = ["foo", "bar", "zoo"];</code></p>
+                    Gives the indexOf the element if present else -1
+                  </td>
+                </tr>
+                <tr>
+                  <td>Slice Nodelists</td>
+                  <td><code>$("a").slice(1, 3)</code></td>
+                  <td><code>dojo.query("a").slice(1, 3)</code></td>
+                  <td class="notes">Returns first to anchors on the query</td>
+                </tr>
+                <tr>
+                  <td>Filter through NodeLists</td>
+                  <td><code>$("a").filter(".brand")</code></td>
+                  <td><code>dojo.query("a").filter(".brand")</code></td>
+                  <td class="notes">Filter the anchor with class <em>brand</em></td>
+                </tr>
+                <tr>
+                  <td>Filter with functions</td>
+                  <td><pre>$('a').filter(function () {
+return $(this).attr("href") === '#';
+});</pre></td>
+                  <td><pre>dojo.query("a").
+  filter(function(node){
+    return dojo.query(node).attr("href") == '#';
+  });</pre></td>
+                  <td class="notes">Can pass callbacks to filter</td>
+                </tr>
+                <tr>
+                  <td>Map</td>
+                  <td><code>$.map($("a"), function(a, index){return $(a).parent().get(0)})</code></td>
+                  <td><pre>dojo.query("a").
+map(function(node){
+return node.parentNode;
+});</pre></td>
+                  <td class="notes">Returns an array list by working on the array with the callback thats passed.</td>
+                </tr>
               </tbody>
             </table>    
             <hr>
