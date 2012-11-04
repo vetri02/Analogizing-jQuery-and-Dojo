@@ -39,11 +39,6 @@
                          
                           <li>
                             <a href="#nodelist">Array vs. NodeList</a>
-                            <!--
-                            TODO: Figure out a better place for summaries like this. And make them visible.
-                            <p class="gloss">The fundamental unit of jQuery is a JavaScript Array containing 0 or more DOM elements. These Array objects have extra <code>.on()</code>, <code>.click()</code>, <code>.map()</code>, etc methods attached to them in addition to the built-in list operations like <code>.slice()</code> and <code>.concat()</code>. </p>
-                            <p class="gloss">The fundamental units in YUI are <a href="http://developer.yahoo.com/yui/3/api/Node.html">Node</a> objects, which wrap DOM elements, and <a href="http://developer.yahoo.com/yui/3/api/NodeList.html">NodeList</a>s which are collections of Nodes. NodeLists are not Arrays and are not natively iterable.</p>
-                            -->
                           </li>
                           <li><a href="#ajax">Ajax</a></li>
                           <li><a href="#css">CSS</a></li>
@@ -464,7 +459,59 @@ return node.parentNode;
                   <td class="notes">Returns an array list by working on the array with the callback thats passed.</td>
                 </tr>
               </tbody>
-            </table>    
+            </table>
+            <h3 id="ajax">Ajax</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="jquery">jQuery 1.8.2</th>
+                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ajax Query</td>
+                  <td><pre>$.ajax({
+  url:      <em>url</em>,
+  type:     <em>//GET(or)POST</em>,
+  data:     <em>data</em>,  
+  success:  <em>successFn</em>
+  error:  <em>errFn</em>,
+  complete: <em>completeFn</em>
+});</pre></td>
+                  <td><em class="loud">GET</em>
+                    <pre>dojo.xhrGet({
+  url:      <em>url</em>,
+  handleAs: <em>typeofData</em> <em>//JSON, text</em>
+  content:     <em>data</em>, <em>
+  load:  <em>successFn</em>
+  error:  <em>errFn</em>,
+  handle: <em>completeFn</em>
+});</pre>
+<em class="loud">POST</em>
+<pre>dojo.xhrPost({
+  url:      <em>url</em>,
+  handleAs: <em>typeofData</em> <em>//JSON, text</em>
+  content:     <em>data</em>,
+  load:  <em>successFn</em>
+  error:  <em>errFn</em>,
+  handle: <em>completeFn</em>
+});</pre>
+                  </td>
+                  <td class="notes">
+                    <strong>jQuery</strong>
+                    <p>Has a <em>complete</em> method can used along with success and error callbacks, called by the ajax method regardless of success or error</p>
+
+                    <strong>Dojo</strong>
+                    <p>Has a <em>handle</em> method can used along with success and error callbacks, called by the ajax method regardless of load or error</p>
+
+                    <p>Insted of <em>content</em> in POST calls we can use <em>form</em> through which we can pass in a form id and it will send the form values as key value pairs to through the ajax call.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <hr>
 
             <footer>
