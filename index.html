@@ -21,14 +21,14 @@
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
         <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
+            <div class="gradient-bg">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Analogizing jQuery and Dojo</a>
+                    <a class="brand" href="#start">Analogizing jQuery &amp; Dojo</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav" id="nav">
                           <li class="active"><a href="#start">Getting Started</a></li>
@@ -42,6 +42,7 @@
                           </li>
                           <li><a href="#ajax">Ajax</a></li>
                           <li><a href="#css">CSS</a></li>
+                          <li><a href="#utilities">More..</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -138,10 +139,10 @@ function () {
                   <td><code>$("<<span class="hidden">\</span>div/>")</code></td>
                   <td><code>dojo.create("div")</code></td>
                   <td class="notes">Usage:
-                    <p><strong>jQuery</strong></p>
+                    <p><strong><span class="label label-info">jQuery</span></strong></p>
                     <pre>var e = $("&lt;div/&gt;").attr("id","last");
 $("body").append(e);</pre>
-                    <p><strong>Dojo</strong></p>
+                    <p><strong><span class="label label-success">Dojo</span></strong></p>
                     <pre>dojo.create("div",{"id":"last"},dojo.body());
                     </pre>
                   </td>
@@ -151,9 +152,9 @@ $("body").append(e);</pre>
                   <td><code>$("#bar").html()</code></td>
                   <td><code>dojo.byId("bar").innerHTML</code></td>
                   <td class="notes">Even setting the innerHTML is pretty much same
-                    <p><strong>jQuery</strong></p>
+                    <p><strong><span class="label label-info">jQuery</span></strong></p>
                     <code>$("#bar").html("Hola")</code>
-                    <p><strong>Dojo</strong></p>
+                    <p><strong><span class="label label-success">Dojo</span></strong></p>
                     <code>dojo.byId("bar").innerHTML = "Hola"</code>
                   </td>
                 </tr>
@@ -162,9 +163,9 @@ $("body").append(e);</pre>
                   <td><code>$("select:first").val()</code></td>
                   <td><code>dojo.query("select")[0].value</code></td>
                   <td class="notes">Set the value the same way
-                    <p><strong>jQuery</strong></p>
+                    <p><strong><span class="label label-info">jQuery</span></strong></p>
                     <code>$("select:first").val("Here is the first option")</code>
-                    <p><strong>Dojo</strong></p>
+                    <p><strong><span class="label label-success">Dojo</span></strong></p>
                     <code>dojo.query("select")[0].value = "Here is the first option"</code>
                   </td>
                 </tr>
@@ -208,8 +209,8 @@ $("body").append(e);</pre>
                     <td><code>$(body).children();</code></td>
                     <td><code>dojo.query("body > *")</code></td>
                     <td class="notes">
-                        Can use selectors to filter results eg.: <p><strong>jQuery</strong></p> <code>$("body").children("div")</code>
-                        <p><strong>Dojo</strong></p> <code>dojo.query("body > div")</code>
+                        Can use selectors to filter results eg.: <p><strong><span class="label label-info">jQuery</span></strong></p> <code>$("body").children("div")</code>
+                        <p><strong><span class="label label-success">Dojo</span></strong></p> <code>dojo.query("body > div")</code>
                     </td>
                   </tr>
               </tbody>
@@ -415,7 +416,12 @@ $(this).addClass("foo");
 function(pa){
 dojo.addClass(pa,'foo');
 });</pre></td>
-                  <td class="notes">The nodelist thats being sent can be considered as an array, so you can perform operatiosn on it as you need.</td>
+                  <td class="notes">
+                    <p>The nodelist thats being sent can be considered as an array, so you can perform operatiosn on it as you need.</p>
+                    <strong><span class="label label-info">jQuery</span></strong>
+                    <p>Can also do</p>
+                    <p><code>$("p").addClass("foo")</code></p>
+                  </td>
                 </tr>
                 <tr>
                   <td><em class="right">IndexOf</em></td>
@@ -501,21 +507,192 @@ return node.parentNode;
 });</pre>
                   </td>
                   <td class="notes">
-                    <strong>jQuery</strong>
+                    <strong><span class="label label-info">jQuery</span></strong>
                     <p>Has a <em>complete</em> method can used along with success and error callbacks, called by the ajax method regardless of success or error</p>
 
-                    <strong>Dojo</strong>
+                    <strong><span class="label label-success">Dojo</span></strong>
                     <p>Has a <em>handle</em> method can used along with success and error callbacks, called by the ajax method regardless of load or error</p>
 
                     <p>Insted of <em>content</em> in POST calls we can use <em>form</em> through which we can pass in a form id and it will send the form values as key value pairs to through the ajax call.</p>
                   </td>
                 </tr>
+                <tr>
+                  <td>Load HTML</td>
+                  <td><code>$('#msg').load('/ajax/test.html');</code></td>
+                  <td><pre>
+dojo.xhrGet({
+  url: "/ajax/test.html",
+  load: function(newContent){
+  dojo.byId("msg")
+    .innerHTML = newContent;
+  }
+  ,error: function() {<em>//don't do anything</em>}
+});
+                  </pre></td>
+                  <td class="notes">Loads the content of a given URL in #message.</td>
+                </tr>
+                <tr>
+                  <td>JSONP</td>
+                  <td><pre>
+$.getJSON("http://search.twitter.com/search.json?callback=?",{q: "vetri02"},
+function(tweets) {
+  <em>// Handle response here</em>
+  console.info(tweets);
+});
+                  </pre></td>
+                  <td><pre>
+dojo.require("dojo.io.script");
+
+dojo.ready(function() {
+  dojo.io.script.get({
+  url: "http://search.twitter.com/search.json",
+  callbackParamName: "callback",
+  content:{q: "vetri02"},
+  load: function(tweetsJson){
+    console.info(tweetsJson);
+  }
+  });
+});
+                  </pre></td>
+                  <td class="notes">
+                    <strong><span class="label label-info">jQuery</span></strong>
+                    <p>jQuery uses the same <em>getJSON</em> for jsonp if you use callback parameter in the request</p>
+
+                    <strong><span class="label label-success">Dojo</span></strong>
+                    <p>Dojo uses dojo.io.script to make jsonp calls.</p>
+
+                    <p class="alert alert-block">
+                      Notice we have added <em>dojo.require("dojo.io.script");</em>(used for making  jsonp calls) this is how you add modules in dojo. Dojo has various modules for various purposes like say <em>dojo.require("dojo.NodeList-traverse");</em> which provides features like .parents in jQuery. To use this you have to use all the dojo package.  
+                    </p>
+
+                    <p>Checkout <a href="http://davidwalsh.name/jsonp">David Walsh's post</a> for more info</p>
+                  </td>
+                </tr>
               </tbody>
             </table>
-            <hr>
+            <h3 id="css">CSS</h3>
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th class="jquery">jQuery 1.8.2</th>
+                              <th class="dojo">Dojo 1.7</th>
+                              <th class="notes">Notes</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Class</td>
+                              <td><pre>
+$("#bar").addClass('foo')
+$("#bar").removeClass('foo')
+$("#bar").toggleClass('foo')
+$("#bar").hasClass('foo')
+                              </pre></td>
+                              <td><pre>
+dojo.addClass("bar", "foo");
+dojo.removeClass("bar", "foo");
+dojo.toggleClass("bar", "foo");
+dojo.hasClass("bar", "foo")
+                              </pre></td>
+                              <td class="notes">
+                              <em>hasClass</em> on both gives a boolean value true or false based on the class if present on the element.
+                            </td>
+                            </tr>
+                            <tr>
+                              <td>Removeclass</td>
+                              <td><code>$("#bar").removeClass('foo').addClass('bar')</code></td>
+                              <td><code>dojo.replaceClass("bar", "bar", "foo");</code></td>
+                              <td class="notes">
+                                <strong><span class="label label-success">Dojo</span></strong>
+                                 <p>In Dojo the first arguement is the node id, second is the class to be added and third to be removed.</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Show and Hide</td>
+                              <td><pre>
+$("#bar").show()
+$("#bar").hide()
+</pre></td>
+                              <td><pre>
+dojo.style("bar", "display", "block");
+dojo.style("bar", "display", "none");
+                              </pre></td>
+                              <td class="notes"></td>
+                            </tr>
+                            <tr>
+                              <td>Set style</td>
+                              <td><pre>
+$("#bar").css({
+  'height':  '100',
+  'width':   '100',
+  'display': 'block'
+})
+                              </pre></td>
+                              <td><pre>
+dojo.style("bar", {
+  'height':  '100',
+  'width':   '100',
+  'display': 'block'
+});
+                              </pre></td>
+                              <td class="notes"></td>
+                            </tr>
+                            <tr>
+                              <td>Position and size of an element</td>
+                              <td><code>$("#bar").offset()</code></td>
+                              <td><code>dojo.position("bar");</code></td>
+                              <td class="notes">
+                                <em>Values</em>
+                                <br/>
+                                <span class="label label-info">jQuery</span>
+                                //{left: 123, top: 456, width: 789, height: 1011}
+                                <br/>
+                                <span class="label label-success">Dojo</span>
+                                //{ w: 300: h: 150, x: 700, y: 900, }
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <hr>
+                        <h2>More..</h4>
+                        <h3 id="utilities">Utilities</h3>
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th class="jquery">jQuery 1.8.2</th>
+                              <th class="dojo">Dojo 1.7</th>
+                              <th class="notes">Notes</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>forEach</td>
+                              <td><code>$.each([1, 2, 3], function(index, value){})</code></td>
+                              <td><code>dojo.forEach([1, 2, 3], function(value, index){})</code></td>
+                              <td class="notes">Iterate through array.</td>
+                            </tr>
+                            <tr>
+                              <td>indexOf</td>
+                              <td><code>$.inArray(1, [1, 2, 3])</code></td>
+                              <td><code>dojo.indexOf([1, 2, 3], 1);</code></td>
+                              <td class="notes">Index of value in array</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                       <hr>
 
             <footer>
-                <p><em>by ThetaScript</em></p>
+              <blockquote class="pull-right">
+                <p><strong>Credits: </strong> 
+                Curated by <a href="http://www.thetascript.com">Vetrichelvan</a></p>
+                 <small class="muted">Inspiration for this came from  <a href="http://www.jsrosettastone.com/">jQuery - YUI 3 Rosetta Stone</a></small>
+              </blockquote>
+
+              
+               
+              
             </footer>
 
         </div> <!-- /container -->

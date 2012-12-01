@@ -12,6 +12,8 @@ $(function(){
 
 	$(nav).find("a").smoothScroll({offset:-40});
 
+	$(".brand").smoothScroll({offset:-40});
+
 	$nav.click(function(){
 		$nav.each(function(){
 			$(this).removeClass("active");
