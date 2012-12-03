@@ -10,14 +10,14 @@ $(function(){
 
 	$nav = $("#nav").find("li");
 
-	$(nav).find("a").smoothScroll({offset:-40});
+	$(nav).find("a").smoothScroll({offset:-15});
 
 	$(".brand").smoothScroll({offset:-40});
 
-	$nav.click(function(){
+	/*$nav.click(function(){
 		$nav.each(function(){
 			$(this).removeClass("active");
 		});
 		$(this).addClass("active");
-	});
+	});*/
 });

@@ -16,7 +16,7 @@
 
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
-    <body>
+    <body data-spy="scroll" data-target=".navbar">
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
@@ -82,6 +82,15 @@
                   <td class="notes">
                       <p>jQuery provides a function which can be accessed by <code>jQuery</code> or <code>$</code> which can be used to access all the jQuery methods. Ideally it accepts CSS selectors, searches through the DOM for any elements that match the provided selector and creates a new jQuery object that references these elements.</p>
                       <p>Similarly <code>dojo</code> has a object which has all the methods.</p>
+                      
+                      <p>
+                        <span class="label label-important">Important</span>
+                      </p>
+                      <p><span class="label label-info">jQuery</span> When we access an element with jquery say $(".bar") it returns a jquery object and not just the actual element, on which we can add methods through chaining to work upon.</p> 
+                      <p><em>eg.</em> <code>$("bar").addClass("foo").removeClass("foe")</code>. And if we want to have only the DOM element, we have to do <code>$("bar").get(0)</code></p>
+                      <p> If there are more than one element which matches the criteria jQuery will return an array</p>
+
+                      <p><span class="label label-success">Dojo</span> However, DOJO will simply return the DOM element or an array in case we use <code>dojo.query("bar")</code>, and it matches quite a few elements.</p>
                   </td>
                 </tr>
                 <tr>
@@ -697,6 +706,7 @@ dojo.style("bar", {
               <blockquote class="pull-right">
                 <p><strong>Credits: </strong> 
                 Created by <a href="http://www.thetascript.com">Vetrichelvan J</a></p>
+                <p>Reviewed by: <a href="http://twitter.com/charlielow">Charlie Low</a></p>
                  <small class="muted">Inspiration for this came from  <a href="http://www.jsrosettastone.com/">jQuery - YUI 3 Rosetta Stone</a></small>
               </blockquote>
 
