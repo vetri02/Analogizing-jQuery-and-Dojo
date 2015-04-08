@@ -8,10 +8,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
          <title>Analogizing jQuery & Dojo</title>
         <meta name="description" content="Comparision between jquery and dojo">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="newStatic/css/bootstrap.min.css">
+        
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
@@ -20,17 +20,24 @@
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
-        <div class="navbar navbar-fixed-top">
-            <div class="gradient-bg">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#home">Analogizing jQuery &amp; Dojo</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav" id="nav">
+
+
+        <nav class="navbar navbar-fixed-top">
+             <div class="container-fluid ">
+                   <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <!-- <a class="navbar-brand" href="#home">Analogizing jQuery &amp; Dojo</a> -->
+                  </div>
+
+                     <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" id="nav">
                           <li class="active"><a href="#start">Getting Started</a></li>
                           <li><a href="#common">Common Idioms</a></li>
                           <li><a href="#events">Events</a></li>
@@ -45,19 +52,19 @@
                           <li><a href="#utilities">More..</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
-                </div>
             </div>
-        </div>
+        </nav>
 
         <div class="container">
             
-            <blockquote class="pull-right">
+            <!-- <blockquote class="pull-right">
               <p>Go back to <a href="http://www.thetascript.com">thetascript.com</a></p>
-            </blockquote>
+            </blockquote> -->
 
-            <blockquote id="home">
-            <p>This is an effort to create a chart which gives as a comparision between jQuery and Dojo</p>
-            </blockquote>
+            
+            <h1>Analogizing jQuery &amp; Dojo</h1>
+            <p class="lead"><small>This is an effort to create a comparision between jQuery and Dojo</small></p>
+            
 
             <h3 id="start">Getting Started</h3>
 
@@ -65,8 +72,8 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -84,7 +91,7 @@
                       <p>Similarly <code>dojo</code> has a object which has all the methods.</p>
                       
                       <p>
-                        <span class="label label-important">Important</span>
+                        <span class="label label-primary">Important</span>
                       </p>
                       <p><span class="label label-info">jQuery</span> When we access an element with jquery say $(".bar") it returns a jquery object and not just the actual element, on which we can add methods through chaining to work upon.</p> 
                       <p><em>eg.</em> <code>$("bar").addClass("foo").removeClass("foe")</code>. And if we want to have only the DOM element, we have to do <code>$("bar").get(0)</code></p>
@@ -118,8 +125,8 @@ function () {
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo  1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -239,8 +246,8 @@ $("body").append(e);</pre>
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -277,8 +284,8 @@ $("body").append(e);</pre>
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -320,8 +327,8 @@ $("body").append(e);</pre>
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -419,8 +426,8 @@ $("body").append(e);</pre>
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -490,8 +497,8 @@ return node.parentNode;
               <thead>
                 <tr>
                   <th></th>
-                  <th class="jquery">jQuery 1.8.2</th>
-                  <th class="dojo">Dojo < 1.7</th>
+                  <th class="jquery">jQuery 2.1</th>
+                  <th class="dojo">Dojo 1.7</th>
                   <th class="notes">Notes</th>
                 </tr>
               </thead>
@@ -553,7 +560,8 @@ dojo.xhrGet({
                 <tr>
                   <td>JSONP</td>
                   <td><pre>
-$.getJSON("http://search.twitter.com/search.json?callback=?",{q: "vetri02"},
+$.getJSON("http://search.twitter.com/
+search.json?callback=?",{q: "vetri02"},
 function(tweets) {
   <em>// Handle response here</em>
   console.info(tweets);
@@ -594,7 +602,7 @@ dojo.ready(function() {
                           <thead>
                             <tr>
                               <th></th>
-                              <th class="jquery">jQuery 1.8.2</th>
+                              <th class="jquery">jQuery 2.1</th>
                               <th class="dojo">Dojo 1.7</th>
                               <th class="notes">Notes</th>
                             </tr>
@@ -680,7 +688,7 @@ dojo.style("bar", {
                           <thead>
                             <tr>
                               <th></th>
-                              <th class="jquery">jQuery 1.8.2</th>
+                              <th class="jquery">jQuery 2.1</th>
                               <th class="dojo">Dojo 1.7</th>
                               <th class="notes">Notes</th>
                             </tr>
@@ -706,7 +714,6 @@ dojo.style("bar", {
               <blockquote class="pull-right">
                 <p><strong>Credits: </strong> 
                 Created by <a href="http://www.thetascript.com">Vetrichelvan J</a></p>
-                <p>Reviewed by: <a href="http://twitter.com/charlielow">Charlie Low</a></p>
                  <small class="muted">Inspiration for this came from  <a href="http://www.jsrosettastone.com/">jQuery - YUI 3 Rosetta Stone</a></small>
               </blockquote>
 
@@ -717,9 +724,9 @@ dojo.style("bar", {
 
         </div> <!-- /container -->
 
-        <script src="js/vendor/jquery-1.8.2.min.js"></script>
+        <script src="js/vendor/jquery-2.1.3.js"></script>
         <script src="js/vendor/dojo.1.6.1.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="newStatic/js/bootstrap.min.js"></script>
         <script src="js/vendor/jquery.smoothScroll.min.js"></script>
         
         <script src="js/main.js"></script>
